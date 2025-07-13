@@ -1,6 +1,10 @@
 import React from "react";
 
 const Card = ({ movie }) => {
+  const dateFormater = (date) => {
+    let [yy, mm, dd] = date.split("-");
+    return [dd, mm, yy];
+  };
   return (
     <div className="card">
       <img
@@ -11,6 +15,13 @@ const Card = ({ movie }) => {
         }
         alt={`affiche ${movie.title}`}
       />
+      <h2>{movie.title}</h2>
+      {movie.release_date ? (
+        <h5>Sorti le : {dateFormater(movie.release_date).join("/")}</h5>
+      ) : null}
+      <h4>
+        {movie.vote_average}/10 <span>⭐​​</span>
+      </h4>
     </div>
   );
 };
