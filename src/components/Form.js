@@ -5,7 +5,7 @@ import Card from "./Card";
 const Form = () => {
   const [dataMovies, setDataMovies] = useState([]);
   const [search, setSearch] = useState("code");
-  const [sortGoodBad, setSortGoodBad] = useState("goodToBad");
+  const [sortGoodBad, setSortGoodBad] = useState(null);
   useEffect(() => {
     axios
       .get(
